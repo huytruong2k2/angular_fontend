@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div id="home">
+    <div class="container">
+      <div class="row">
+        <h2 style="text-align: center;">Danh sách công việc của Bạn</h2>
+        <div class="table-container">
+    <div>
+           
+    </div>
+          <br>
+          <br>
+          <div *ngIf="todolists">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+               <!--<th>ID</th>-->
+                <th>TÊN CÔNG VIỆC</th>
+                <th>NGÀY BẮT ĐẦU</th>
+                <th>NGÀY KẾT THÚC</th>
+              </tr>
+            </thead>
+            <tbody id="congviec">
+             <tr *ngFor="let todo of todolists">
+              <!--<td>{{todo.Id}}</td>-->
+              <td>{{todo.TenCongViec}}</td>
+              <td>{{todo.NgayBatDau}}</td>
+              <td>{{todo.NgayKetThuc}}</td>
+              <button  class="btn btn-danger" (click)="confirmDelete(todo.Id)" style="background-color: red;"><span class="material-icons">
+                check_circle_outline
+                </span></button>
+            </tr>
+           
+            </tbody>
+          </table>
+        </div>
+        <div *ngIf="!todolists">
+          <h1>Bạn chưa có công việc nào !</h1>
+        </div>
+        <button label="Sign out" (onClick)="logOut()"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>    

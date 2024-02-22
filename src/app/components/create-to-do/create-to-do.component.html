@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="box">
+        <form [formGroup]="todoForm" (ngSubmit)="insert()">
+            <h2>To Do List</h2>
+            <input type="text"  placeholder="Thêm công việc cần làm... " id="input_cv" formControlName="input_cv" [(ngModel)]="newTodoName" required>
+
+            <div class="datePicker">
+                <p class="Date_text">Ngày bắt đầu: </p>
+                <input type="date" id="ngay_txtDate1" runat="server" formControlName="ngay_txtDate1" [(ngModel)]="Date1" required/>
+            </div>
+            <div class="datePicker">
+                <p class="Date_text">Ngày Kết thúc: </p>
+                <input type="date" id="ngay_txtDate2" runat="server" formControlName="ngay_txtDate2" [(ngModel)]="Date2" required/>
+            </div>
+
+            <div class="btn_themcongviec">
+                <button type="submit"  id="btn">Thêm công việc</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>
